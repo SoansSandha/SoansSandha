@@ -1,5 +1,9 @@
 <div align="center">
 
+<img src="./banner.svg" width="860" alt="SOANS" />
+
+<br><br>
+
 <h3><code>soans@github ~ $ ./contributions.sh</code></h3>
 <img src="./contrib-heatmap.svg" width="860" alt="Contribution heatmap" />
 
