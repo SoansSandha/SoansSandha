@@ -44,10 +44,11 @@ anim = ".c{opacity:0;animation:pop .5s ease-out both}@keyframes pop{from{opacity
 css = style_block(ANIMATED, fills + anim)
 
 fy = TOP + 7 * STEP + 28
-lx = W - 40 - 5 * STEP - 62
-legend = (f'<text class="dim sm" x="{lx}" y="{fy}">Less</text>' +
-    "".join(f'<rect class="l{i}" x="{lx + 30 + i * STEP}" y="{fy - 10}" width="{CELL}" height="{CELL}" rx="3"/>' for i in range(5)) +
-    f'<text class="dim sm" x="{lx + 30 + 5 * STEP + 4}" y="{fy}">More</text>')
+# legend sits in the title bar so the stats footer can use the full width
+lx, ly = W - 40 - 5 * STEP - 62, 22
+legend = (f'<text class="dim sm" x="{lx}" y="{ly}">Less</text>' +
+    "".join(f'<rect class="l{i}" x="{lx + 30 + i * STEP}" y="{ly - 10}" width="{CELL}" height="{CELL}" rx="3"/>' for i in range(5)) +
+    f'<text class="dim sm" x="{lx + 30 + 5 * STEP + 4}" y="{ly}">More</text>')
 
 bd = date.fromisoformat(st["best_day"]["date"]).strftime("%b %-d")
 foot = (f'<text xml:space="preserve" x="{LEFT}" y="{fy}"><tspan class="hi">{st["total"]}</tspan> contributions in the last year'
